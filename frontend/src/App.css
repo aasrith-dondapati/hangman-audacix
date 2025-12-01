@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.start-screen {
+  padding: 20px;
+}
+
+.start-screen p {
+  margin-bottom: 30px;
+  color: #666;
+  font-size: 1.1em;
+}
+
+.game-screen {
+  padding: 20px;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.status-badge {
+  font-weight: 600;
+  color: #333;
+}
+
+.status-inprogress {
+  color: #2196F3;
+}
+
+.status-won {
+  color: #4CAF50;
+}
+
+.status-lost {
+  color: #f44336;
+}
+
+.guesses-info {
+  text-align: right;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.guesses-info p {
+  margin: 5px 0;
+}
+
+.word-display {
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  margin: 40px 0;
+  color: #333;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.word-letter {
+  display: inline-block;
+  min-width: 40px;
+  padding: 10px;
+  border-bottom: 4px solid #667eea;
+  margin: 0 5px;
+}
+
+.guess-feedback {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.guess-feedback.correct {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.guess-feedback.incorrect {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+.guess-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.guess-input {
+  font-size: 1.5em;
+  padding: 15px 20px;
+  border: 3px solid #667eea;
+  border-radius: 10px;
+  text-align: center;
+  width: 80px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.guess-input:focus {
+  outline: none;
+  border-color: #764ba2;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.guess-input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-guess {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-guess:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-secondary {
+  background: #f5f5f5;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.game-result {
+  margin: 30px 0;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.game-result.won {
+  background: #d4edda;
+  border: 2px solid #c3e6cb;
+  color: #155724;
+}
+
+.game-result.lost {
+  background: #f8d7da;
+  border: 2px solid #f5c6cb;
+  color: #721c24;
+}
+
+.game-result h2 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.game-result p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  border: 2px solid #f5c6cb;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .word-display {
+    font-size: 2em;
+    letter-spacing: 0.2em;
+  }
+
+  .game-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guesses-info {
+    text-align: center;
+  }
+}
